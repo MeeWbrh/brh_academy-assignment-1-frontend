@@ -1,83 +1,150 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef, Ref, MutableRefObject } from 'react';
 import { Carousel, Button, Space } from 'antd';
 import React from 'react';
-import { IonContent, IonFab, IonFabButton, IonFabList, IonIcon, IonHeader, IonTitle } from '@ionic/react';
-import { add, colorFill, colorFillSharp } from 'ionicons/icons';
+import { IonContent, IonFab, IonFabButton, IonFabList, IonIcon } from '@ionic/react';
+import { add, colorFill } from 'ionicons/icons';
 import './Tab2Form.css';
+import { CarouselRef } from 'antd/es/carousel';
 
 const Tab2Form: React.FC = () => {
   const [bgColor, setBgColor] = useState('light');
   console.log(bgColor);
+  // const refs = useRef<CarouselRef>(null);
+  const refs: any = useRef();
   const revertClick = useCallback(() => {
     setBgColor(bgColor);
   }, [setBgColor]);
-  // const handleClick2 = (e: { preventDefault: () => void }) => {
-  //   e.preventDefault();
-  //   setBgColor(bgColor);
-  // }
-  // const handleClick = useCallback(() => {
-  //   setBgColor("success");
-  // }, [setBgColor]);
+  // useEffect(() => {
+  //   console.log(caruselNr);
+  // }, []);
+  // const [caruselNr, setcaruselNr] = useState(7);
+
   return (
     <IonContent color={bgColor}>
-      <Carousel
-        // autoplay
-        // effect="fade"
-        // speed={4000}
-        className="tab2Carousel"
-        // dots
-      >
+      <Carousel className="tab2Carousel" draggable ref={refs} fade dots>
         <div>
-          <img src="https://wallpaperaccess.com/full/5120324.jpg" alt="image1" />
+          <img src="https://convertingcolors.com/color-palette-image/view/f4f5f8.png" alt="lightImg" />
         </div>
         <div>
-          <img src="https://www.pixelstalk.net/wp-content/uploads/2016/03/Nice-Backgrounds-for-desktop-download.jpg" alt="image2" />
+          <img src="https://convertingcolors.com/color-palette-image/view/eb445a.png" alt="dangerImg" />
         </div>
         <div>
-          <img src="https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616__480.jpg" alt="image3" />
+          <img src="https://convertingcolors.com/color-palette-image/view/222428.png" alt="darkImg" />
         </div>
         <div>
-          <img src="https://wallpaperaccess.com/full/5030514.jpg" alt="image4" />
+          <img src="https://convertingcolors.com/color-palette-image/view/EDD036.png" alt="warningImg" />
+        </div>
+        <div>
+          <img src="https://convertingcolors.com/color-palette-image/view/3DC2FF.png" alt="secondaryImg" />
+        </div>
+        <div>
+          <img src="https://convertingcolors.com/color-palette-image/view/6DD63C.png" alt="successImg" />
+        </div>
+        <div>
+          <img src="https://convertingcolors.com/color-palette-image/view/92949c.png" alt="mediumImg" />
+        </div>
+        <div>
+          <img src="https://convertingcolors.com/color-palette-image/view/5260ff.png" alt="tertiaryImg" />
+        </div>
+        <div>
+          <img src="https://convertingcolors.com/color-palette-image/view/3880FF.png" alt="primaryImg" />
         </div>
       </Carousel>
 
       <IonFab vertical="center" horizontal="center" slot="fixed" className="colorFabBtn">
-        <IonFabButton color="dark" onClick={revertClick}>
+        <IonFabButton
+          color="dark"
+          onClick={() => {
+            refs.current?.goTo(0, 1);
+            revertClick();
+          }}
+        >
           <IonIcon icon={add}></IonIcon>
         </IonFabButton>
 
         <IonFabList side="top">
-          <IonFabButton color="danger" onClick={() => setBgColor('danger')}>
+          {/* setBgColor('danger') */}
+          {/* <IonFabButton color="danger" onClick={() => { setBgColor('danger'); refs.current.goTo(); }}>  */}
+          <IonFabButton
+            color="danger"
+            onClick={() => {
+              refs.current?.goTo(1, 2);
+              setBgColor('danger');
+            }}
+          >
             <IonIcon icon={colorFill}></IonIcon>
           </IonFabButton>
-          <IonFabButton color="dark" onClick={() => setBgColor('dark')}>
+          <IonFabButton
+            color="dark"
+            onClick={() => {
+              refs.current?.goTo(2, 3);
+              setBgColor('dark');
+            }}
+          >
             <IonIcon icon={colorFill}></IonIcon>
           </IonFabButton>
         </IonFabList>
 
         <IonFabList side="end">
-          <IonFabButton color="warning" onClick={() => setBgColor('warning')}>
+          <IonFabButton
+            color="warning"
+            onClick={() => {
+              refs.current?.goTo(3, 4);
+              setBgColor('warning');
+            }}
+          >
             <IonIcon icon={colorFill}></IonIcon>
           </IonFabButton>
-          <IonFabButton color="secondary" onClick={() => setBgColor('secondary')}>
+          <IonFabButton
+            color="secondary"
+            onClick={() => {
+              refs.current?.goTo(4, 5);
+              setBgColor('secondary');
+            }}
+          >
             <IonIcon icon={colorFill}></IonIcon>
           </IonFabButton>
         </IonFabList>
 
         <IonFabList side="bottom">
-          <IonFabButton color="success" onClick={() => setBgColor('success')}>
+          <IonFabButton
+            color="success"
+            onClick={() => {
+              refs.current?.goTo(5, 6);
+              setBgColor('success');
+            }}
+          >
             <IonIcon icon={colorFill}></IonIcon>
           </IonFabButton>
-          <IonFabButton color="medium" onClick={() => setBgColor('medium')}>
+          <IonFabButton
+            color="medium"
+            onClick={() => {
+              refs.current?.goTo(6, 7);
+              setBgColor('medium');
+            }}
+          >
             <IonIcon icon={colorFill}></IonIcon>
           </IonFabButton>
         </IonFabList>
 
         <IonFabList side="start">
-          <IonFabButton color="tertiary" onClick={() => setBgColor('tertiary')}>
+          <IonFabButton
+            color="tertiary"
+            onClick={() => {
+              refs.current?.goTo(7, 8);
+              setBgColor('tertiary');
+            }}
+          >
             <IonIcon icon={colorFill}></IonIcon>
           </IonFabButton>
-          <IonFabButton color="primary" onClick={() => setBgColor('primary')}>
+
+          <IonFabButton
+            color="primary"
+            onClick={() => {
+              refs.current?.goTo(8, 9);
+              setBgColor('primary');
+            }}
+          >
             <IonIcon icon={colorFill}></IonIcon>
           </IonFabButton>
         </IonFabList>
