@@ -63,8 +63,6 @@ const Tab2Form: React.FC = () => {
         </IonFabButton>
 
         <IonFabList side="top">
-          {/* setBgColor('danger') */}
-          {/* <IonFabButton color="danger" onClick={() => { setBgColor('danger'); refs.current.goTo(); }}>  */}
           <IonFabButton
             color="danger"
             onClick={() => {
