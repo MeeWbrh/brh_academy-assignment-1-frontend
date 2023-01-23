@@ -9,8 +9,8 @@ import { CarouselRef } from 'antd/es/carousel';
 const Tab2Form: React.FC = () => {
   const [bgColor, setBgColor] = useState('light');
   console.log(bgColor);
-  // const refs = useRef<CarouselRef>(null);
-  const refs: any = useRef();
+  const refs = useRef<CarouselRef>(null);
+  // const refs: any = useRef();
   const revertClick = useCallback(() => {
     setBgColor(bgColor);
   }, [setBgColor]);
@@ -26,7 +26,7 @@ const Tab2Form: React.FC = () => {
           <img src="https://convertingcolors.com/color-palette-image/view/f4f5f8.png" alt="lightImg" />
         </div>
         <div>
-          <img src="https://convertingcolors.com/color-palette-image/view/eb445a.png" alt="dangerImg" />
+          <img src="https://convertingcolors.com/color-palette-image/view/EB3F3F.png" alt="dangerImg" />
         </div>
         <div>
           <img src="https://convertingcolors.com/color-palette-image/view/222428.png" alt="darkImg" />
@@ -55,7 +55,7 @@ const Tab2Form: React.FC = () => {
         <IonFabButton
           color="dark"
           onClick={() => {
-            refs.current?.goTo(0, 1);
+            refs.current?.goTo(0);
             revertClick();
           }}
         >
@@ -66,7 +66,7 @@ const Tab2Form: React.FC = () => {
           <IonFabButton
             color="danger"
             onClick={() => {
-              refs.current?.goTo(1, 2);
+              refs.current?.goTo(1);
               setBgColor('danger');
             }}
           >
@@ -75,7 +75,7 @@ const Tab2Form: React.FC = () => {
           <IonFabButton
             color="dark"
             onClick={() => {
-              refs.current?.goTo(2, 3);
+              refs.current?.goTo(2);
               setBgColor('dark');
             }}
           >
@@ -87,7 +87,7 @@ const Tab2Form: React.FC = () => {
           <IonFabButton
             color="warning"
             onClick={() => {
-              refs.current?.goTo(3, 4);
+              refs.current?.goTo(3);
               setBgColor('warning');
             }}
           >
@@ -96,7 +96,7 @@ const Tab2Form: React.FC = () => {
           <IonFabButton
             color="secondary"
             onClick={() => {
-              refs.current?.goTo(4, 5);
+              refs.current?.goTo(4);
               setBgColor('secondary');
             }}
           >
@@ -108,7 +108,7 @@ const Tab2Form: React.FC = () => {
           <IonFabButton
             color="success"
             onClick={() => {
-              refs.current?.goTo(5, 6);
+              refs.current?.goTo(5);
               setBgColor('success');
             }}
           >
@@ -117,7 +117,7 @@ const Tab2Form: React.FC = () => {
           <IonFabButton
             color="medium"
             onClick={() => {
-              refs.current?.goTo(6, 7);
+              refs.current?.goTo(6);
               setBgColor('medium');
             }}
           >
@@ -129,7 +129,7 @@ const Tab2Form: React.FC = () => {
           <IonFabButton
             color="tertiary"
             onClick={() => {
-              refs.current?.goTo(7, 8);
+              refs.current?.goTo(7);
               setBgColor('tertiary');
             }}
           >
@@ -139,7 +139,7 @@ const Tab2Form: React.FC = () => {
           <IonFabButton
             color="primary"
             onClick={() => {
-              refs.current?.goTo(8, 9);
+              refs.current?.goTo(8);
               setBgColor('primary');
             }}
           >

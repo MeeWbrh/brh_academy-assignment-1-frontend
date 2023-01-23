@@ -82,7 +82,7 @@
     "workbox-strategies": "^5.1.4",
     "workbox-streams": "^5.1.4",
     "yup": "^0.32.11",
-    "zustand": "^4.1.2"
+    "zustand": "^4.3.2"
   },
   "devDependencies": {
     "@capacitor/cli": "4.0.1",

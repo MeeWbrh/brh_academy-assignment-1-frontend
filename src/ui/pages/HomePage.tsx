@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import GlobalCount from 'ZustandCounter';
 import { Route, Redirect } from 'react-router';
 import { IonReactRouter } from '@ionic/react-router';
 import {
@@ -27,6 +28,9 @@ import Tab3 from './tabs/tab-3/Tab3';
 import Tab4 from './tabs/tab-4/Tab4';
 import { supabase } from 'apis/supabaseClient';
 import { useAuthUserStore } from 'store/user';
+import Button from 'antd/es/button';
+import { Space, Tooltip } from 'antd';
+import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
 
 const HomePage: React.FC = () => {
   const router = useIonRouter();
@@ -36,6 +40,8 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     if (!authUser) router.push('/login');
   }, [router, authUser]);
+
+  const { count, increment, decrement } = GlobalCount();
 
   const handleLogOut = async () => {
     resetAuthUser();
@@ -50,6 +56,21 @@ const HomePage: React.FC = () => {
           <IonButton onClick={handleLogOut} slot="end">
             Log ud
           </IonButton>
+
+          <Space direction="vertical">
+            <p>Count: {count}</p>
+            <Space wrap>
+              <Tooltip title={count}>
+                {/* <Button type="primary" shape="circle" icon={<PlusOutlined />} /> */}
+                <Button shape="circle" onClick={increment} type="primary" ghost icon={<PlusOutlined />}></Button>
+              </Tooltip>
+              <Tooltip title={count}>
+                {/* <Button type="primary" shape="circle" icon={<PlusOutlined />} /> */}
+                <Button shape="circle" onClick={decrement} type="primary" danger icon={<MinusOutlined />}></Button>
+              </Tooltip>
+            </Space>
+          </Space>
+
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
