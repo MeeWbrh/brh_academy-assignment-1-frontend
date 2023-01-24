@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonContent, IonTitle } from '@ionic/react';
-import Tab2Form from 'ui/components/tabs/Tab2Form';
+import Tab2Form from 'ui/components/tabs/tab-2-form/Tab2Form';
 
 const Tab2: React.FC = () => (
   <IonContent>
