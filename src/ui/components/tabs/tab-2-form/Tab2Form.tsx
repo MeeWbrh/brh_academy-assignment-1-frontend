@@ -23,7 +23,8 @@ const Tab2Form: React.FC = () => {
     <IonContent color={bgColor}>
       <Carousel className="tab2Carousel" draggable ref={refs} fade dots>
         <div>
-          <img src="https://convertingcolors.com/color-palette-image/view/f4f5f8.png" alt="lightImg" />
+          {/* <img src="https://convertingcolors.com/color-palette-image/view/f4f5f8.png" alt="lightImg" /> */}
+          <img src="https://e1.pxfuel.com/desktop-wallpaper/349/866/desktop-wallpaper-zed-test-by-amstad-zed.jpg" alt="startImg" />
         </div>
         <div>
           <img src="https://convertingcolors.com/color-palette-image/view/EB3F3F.png" alt="dangerImg" />

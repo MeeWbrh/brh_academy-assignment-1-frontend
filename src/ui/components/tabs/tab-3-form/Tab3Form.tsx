@@ -1,4 +1,5 @@
-import { IonButton, IonContent, IonIcon, IonPopover } from '@ionic/react';
+import { IonButton, IonContent, IonIcon, IonPopover, IonItem, IonLabel, IonList } from '@ionic/react';
+import { Pet } from 'ClassComponents/Pet';
 import { addOutline, removeOutline } from 'ionicons/icons';
 import React from 'react';
 import GlobalCount from 'ZustandCounter';
@@ -24,6 +25,12 @@ const Tab3Form: React.FC = () => {
           </IonPopover>
           <IonIcon icon={removeOutline}></IonIcon>
         </IonButton>
+      </div>
+      <br />
+      <div className="showPetList">
+        <Pet animalType="Cat" breed="Bengal" name="Coco" age={0.4} owner="Lars"></Pet>
+        <br />
+        <Pet animalType="Cat" breed="Hellig Birma" name="Nuller" age={10} owner="Kurt"></Pet>
       </div>
     </IonContent>
   );

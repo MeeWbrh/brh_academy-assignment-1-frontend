@@ -1,4 +1,6 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+
 type Counts = {
   count: number;
   increment: () => void;

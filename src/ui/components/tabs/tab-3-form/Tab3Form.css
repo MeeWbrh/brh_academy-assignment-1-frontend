@@ -1,5 +1,13 @@
+.showPetList {
+  position: relative;
+  margin: 0 auto;
+  text-align: left;
+  height: auto;
+  text-align: center;
+}
+
 .button-container-div {
-  margin-left: 35%;
-  margin-right: 35%;
-  margin-top: 300px;
+  /* margin-left: 35%;
+  margin-right: 35%; */
+  text-align: center;
 }
