@@ -1,4 +1,4 @@
-import { IonButton, IonContent, IonIcon, IonPopover, IonItem, IonLabel, IonList } from '@ionic/react';
+import { IonButton, IonContent, IonIcon, IonPopover } from '@ionic/react';
 import { Pet } from 'ClassComponents/Pet';
 import { addOutline, removeOutline } from 'ionicons/icons';
 import React from 'react';

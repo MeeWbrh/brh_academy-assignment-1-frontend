@@ -1,10 +1,10 @@
-import { useState, useCallback, useEffect, useRef, Ref, MutableRefObject } from 'react';
-import { Carousel, Button, Space } from 'antd';
+import { useState, useCallback, useRef } from 'react';
+import { Carousel } from 'antd';
 import React from 'react';
 import { IonContent, IonFab, IonFabButton, IonFabList, IonIcon } from '@ionic/react';
 import { add, colorFill } from 'ionicons/icons';
-import './Tab2Form.css';
 import { CarouselRef } from 'antd/es/carousel';
+import './Tab2Form.css';
 
 const Tab2Form: React.FC = () => {
   const [bgColor, setBgColor] = useState('light');
@@ -14,10 +14,6 @@ const Tab2Form: React.FC = () => {
   const revertClick = useCallback(() => {
     setBgColor(bgColor);
   }, [setBgColor]);
-  // useEffect(() => {
-  //   console.log(caruselNr);
-  // }, []);
-  // const [caruselNr, setcaruselNr] = useState(7);
 
   return (
     <IonContent color={bgColor}>
