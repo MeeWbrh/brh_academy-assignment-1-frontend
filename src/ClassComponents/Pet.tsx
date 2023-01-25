@@ -1,5 +1,4 @@
-import { Component } from 'react';
-import { IonList, IonItem, IonLabel, IonContent } from '@ionic/react';
+import { IonList, IonItem, IonLabel } from '@ionic/react';
 
 type PetProps = {
   animalType: string;
