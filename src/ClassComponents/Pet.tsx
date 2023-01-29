@@ -2,29 +2,59 @@ import { IonList, IonItem, IonLabel } from '@ionic/react';
 import { FC } from 'react';
 
 type PetProps = {
-  animalType: string;
-  breed: string;
-  name: string;
-  age: number;
-  owner: string;
+  items: {
+    animalType: string;
+    breed: string;
+    name: string;
+    age: number;
+    owner: string;
+  };
 };
 
-export const Pet: FC<PetProps> = ({ animalType, breed, name, age, owner }) => (
+export const Pet: FC<PetProps> = ({ items }) => (
   <IonList>
     <IonItem>
-      <IonLabel>Animal: {animalType}</IonLabel>
+      <IonLabel>Animal: {items.animalType}</IonLabel>
     </IonItem>
     <IonItem>
-      <IonLabel>Breed: {breed}</IonLabel>
+      <IonLabel>Breed: {items.breed}</IonLabel>
     </IonItem>
     <IonItem>
-      <IonLabel>Pet Name: {name}</IonLabel>
+      <IonLabel>Pet Name: {items.name}</IonLabel>
     </IonItem>
     <IonItem>
-      <IonLabel>Age: {age}</IonLabel>
+      <IonLabel>Age: {items.age}</IonLabel>
     </IonItem>
     <IonItem>
-      <IonLabel>Owner: {owner}</IonLabel>
+      <IonLabel>Owner: {items.owner}</IonLabel>
     </IonItem>
   </IonList>
 );
+
+// type PetProps = {
+//   animalType: string;
+//   breed: string;
+//   name: string;
+//   age: number;
+//   owner: string;
+// };
+
+// export const Pet: FC<PetProps> = ({ animalType, breed, name, age, owner }) => (
+//   <IonList>
+//     <IonItem>
+//       <IonLabel>Animal: {animalType}</IonLabel>
+//     </IonItem>
+//     <IonItem>
+//       <IonLabel>Breed: {breed}</IonLabel>
+//     </IonItem>
+//     <IonItem>
+//       <IonLabel>Pet Name: {name}</IonLabel>
+//     </IonItem>
+//     <IonItem>
+//       <IonLabel>Age: {age}</IonLabel>
+//     </IonItem>
+//     <IonItem>
+//       <IonLabel>Owner: {owner}</IonLabel>
+//     </IonItem>
+//   </IonList>
+// );
